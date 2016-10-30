@@ -31,7 +31,7 @@ openstack port create --network ffhs_net_d ffhs_net_d_port1 &
 
 network_id_private=$(get_network_id private)
 
-for name in r1 r2 a c d; do
+for name in a b c; do
   openstack server create \
     --flavor c1.micro \
     --image "Debian Jessie 8.1 (SWITCHengines)" \
