@@ -3,7 +3,7 @@
 runcmd:
  - puppet module install puppet-network
  - puppet module install duritong-sysctl
- - wget -O - -q https://raw.githubusercontent.com/dominiqueborer/ffhs-rn/master/pva3/puppet-manifest.pp | puppet apply
+ - wget -O - -q https://raw.githubusercontent.com/dominiqueborer/ffhs-rn/master/pva3/puppet-manifest-udp.pp | puppet apply
 
 packages:
  - vim
