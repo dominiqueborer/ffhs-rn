@@ -4,6 +4,9 @@ runcmd:
  - puppet module install puppet-network
  - puppet module install duritong-sysctl
  - wget -O - -q https://raw.githubusercontent.com/dominiqueborer/ffhs-rn/master/pva3/puppet-manifest-udp.pp | puppet apply
+ - adduser ape --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+ - echo "ape:1234" | sudo chpasswd
+
 
 packages:
  - vim
@@ -20,6 +23,11 @@ packages:
  - inetutils-ping 
  - echoping
  - nmap
+ - telnet
+ - iptraf
+ - iperf
+ - apt-file
+ - telnetd
 
 power_state:
  mode: reboot
