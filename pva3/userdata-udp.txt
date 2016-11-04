@@ -6,6 +6,7 @@ runcmd:
  - wget -O - -q https://raw.githubusercontent.com/dominiqueborer/ffhs-rn/master/pva3/puppet-manifest-udp.pp | puppet apply
  - adduser ape --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
  - echo "ape:1234" | sudo chpasswd
+ - sudo adduser ape sudo
 
 
 packages:
