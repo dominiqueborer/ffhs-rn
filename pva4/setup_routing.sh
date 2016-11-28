@@ -71,6 +71,10 @@ wait
 # ansonsten wird jedes verfügbare interface automatisch mit DHCP konfiguriert.
 #
 sleep 60
+for name in ffhs-r1 ffhs-r2 ffhs-r3 ffhs-pc1 ffhs-pc2 ffhs-pc3 ; do
+	nova remove-secgroup $name default
+	nova add-secgroup $name ssh
+done
 
 nova interface-attach --port-id $(neutron port-show -F id -f value ffhs_net_a_port1) ffhs-pc1
 nova interface-attach --port-id $(neutron port-show -F id -f value ffhs_net_a_port2) ffhs-r1
