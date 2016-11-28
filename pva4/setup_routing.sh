@@ -58,7 +58,7 @@ for name in ffhs-r1 ffhs-r2 ffhs-r3 ffhs-pc1 ffhs-pc2 ffhs-pc3 ; do
   openstack server create \
     --flavor c1.micro \
     --image "Debian Jessie 8 (SWITCHengines)" \
-    --key-name="$KEYPAIR" \
+    --key-name=switchy \
     --nic net-id=$network_id_private \
     --user-data $userdata_yaml \
     --wait $name & 
@@ -71,6 +71,7 @@ wait
 # ansonsten wird jedes verfügbare interface automatisch mit DHCP konfiguriert.
 #
 sleep 60
+
 for name in ffhs-r1 ffhs-r2 ffhs-r3 ffhs-pc1 ffhs-pc2 ffhs-pc3 ; do
 	nova remove-secgroup $name default
 	nova add-secgroup $name ssh
